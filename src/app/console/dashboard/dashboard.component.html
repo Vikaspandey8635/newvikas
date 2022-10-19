@@ -1,0 +1,30 @@
+<h5 class="color">Customer list</h5>
+<form [formGroup]="loginForm">
+<label>Name</label>
+
+<input type="text"
+  placeholder="Name"
+  formControlName="name"
+  class="form-control"
+
+  />
+  <label>Tax</label>
+
+<input type="number"
+  placeholder="Name"
+  class="form-control"
+  formControlName="tax"
+  />
+  <label>Order</label>
+
+  <input type="number"
+    placeholder="Name"
+    class="form-control"
+    formControlName="order"
+    />
+
+
+  <button (click)="onSubmit()">Add</button>
+
+</form>
+

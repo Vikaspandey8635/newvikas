@@ -1,0 +1,41 @@
+<div class="m-3">
+  <h3> Property Data </h3>
+  <br>
+  <br>
+  <p> search is implemented on name column</p>
+
+  <br>
+  <div class="wrap">
+    <div class="search">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+    </div>
+    <br>
+    <br>
+    <button (click)="Sort()" >Sort Name</button>
+    <button (click)="SortbyProperty()" >Sort Building Name</button>
+    <button (click)="SortbyTowersName()" >Sort Towers Name</button>
+    <button (click)="SortbyPropertyTypeName()" >Sort Property Type Name</button>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Building Name</th>
+
+    <th>Towers Name</th>
+    <th>Property Type Name</th>
+
+    <th>Configuration Name</th>
+
+  </tr>
+  <tr *ngFor="let data of jsonData | filter:searchText">
+    <td>{{data.name}}</td>
+    <td>{{data.building.name}}</td>
+    <td>{{data.building_towers.tower_name}}</td>
+    <td>{{data.property_type.name}}</td>
+    <td>{{data.configuration.name}}</td>
+    <td>{{data.configuration.name.bathroom}}</td>
+
+
+  </tr>
+</table>
+<button (click)="Sort()" >Sort</button>

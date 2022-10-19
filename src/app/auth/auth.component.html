@@ -1,0 +1,47 @@
+
+    <div >
+      <div class="center">
+        Log In
+      </div>
+      <form [formGroup]="loginForm">
+        <div  >
+          <label>Email</label>
+
+          <input type="email"
+            placeholder="Email"
+            class="form-control"
+            formControlName="email"
+            />
+
+            <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" style="color:red;">Please
+              enter the valid email</span>
+
+      </div>
+      <div class="form_group">
+        <label>Password</label>
+
+          <input matInput type="password" placeholder="Password"
+          formControlName="password"
+            class="form-control"
+            />
+
+            <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" style="color:red;">Please
+              enter the valid password</span>
+
+        </div>
+        <button
+
+          class="btn btn-primary mt-2" (click)="onSubmit()">
+          Log In
+
+        </button>
+        <p class="right">
+          <input type="checkbox" [checked]="remember" (change)="valueChange($event.target)">
+          Remember me
+        </p>
+
+        <br>
+        <h4>Email :- raj123@yopmail.com , password: - 123456789</h4>
+      </form>
+    </div>
+
